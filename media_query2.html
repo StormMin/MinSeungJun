@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            body{
+                display: flex;
+                align-items: center;
+                justify-items: center;
+            }
+          .container{
+              display:flex;
+              flex-direction: column;
+              width: 10000px;
+          }
+          header{
+              border-bottom: 1px solid gray;
+              padding-left: 20px;
+              text-align: center;
+          }
+          footer{
+              border-top:1px solid gray;
+              padding:20px;
+              text-align: center;
+          }
+          .content{
+              display: flex;
+              flex-direction: row;
+          }
+          .content nav{
+              border-right: 1px solid gray;
+          }
+          .content aside{
+              border-left: 1px solid gray;
+              padding :20px;
+          }
+          nav, aside{
+              flex-shrink: 0;
+              flex-grow: 1;
+          }
+          main{
+              padding: 10px;
+              flex-grow: 5;
+          }
+          @media (max-width:500px){
+              .content{
+                  flex-direction:column;
+              }
+              .content nav, .content aside{
+                  border: none;
+              }
+              main{
+                  order:0;
+              }
+              nav{
+                  order:1;
+              }
+              aside{
+                  order:2;
+              }
+          }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>저주의날</h1>
+            </header>
+            <section class="content"> 
+            <nav>
+                <ol>
+                    <li>first step</li>
+                    <li>second step</li>
+                    <li>last dance</li>
+                </ol>
+            </nav>
+            <main>
+                12월 25일 경축
+            </main>
+             <aside>
+              눈오는날 눈스프레이
+            </aside>
+            </section>
+            <footer>
+                <a href="https://spiderman-webstudy.github.io/MinSeungJun/">나의 홈페이지</a>
+            </footer>
+        </div>
+    </body>
+</html>
