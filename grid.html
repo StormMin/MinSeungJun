@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+          .container{
+              height: 500px;
+              display:grid;
+              grid-template-rows: 1fr 4fr 1fr;
+              border:1px solid grey;
+              background-image: url('Tree.jpg');
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              /* background-size: contain; */
+              background-position:right top;
+              background: thistle url('Tree.jpg');
+          }
+          header{
+              border-bottom: 1px solid gray;
+              padding-left: 20px;
+          }
+          footer{
+              border-top:1px solid gray;
+              padding:20px;
+              text-align: center;
+          }
+          .content{
+              display: grid;
+              grid-template-columns: 1fr 4fr 1fr;
+          }
+          .content nav{
+              border-right: 1px solid gray;
+          }
+          .content aside{
+              border-left: 1px solid gray;
+              padding :20px;
+          }
+          main{
+              padding: 10px;
+          }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <header>
+       <h1>KING</h1>
+    </header>
+    <section class="content">       
+        <nav>
+        <ul>
+           <li>king</li>
+           <li>is</li>
+           <li>back</li>
+       </ul>
+        </nav>
+        <main>
+            aouar
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+        </main>
+        <aside>
+            FIFA22
+        </aside>
+       </section>
+       <footer>
+           home
+       </footer>
+    </div>
+    </body>
+</html>
