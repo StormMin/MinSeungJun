@@ -1,3 +1,41 @@
-h1{
-    color:powderblue;
+
+.container{
+    height:1500px;
+    display: grid;
+    grid-template-rows: 1fr 4fr 1fr;
+    border:1px solid black;
+    background-image:url('back.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header{
+    border-bottom: 1px solid black;
+    padding-left: 20px;
+    text-align: center;
+    font-size: 3rem;
+}
+footer{
+    border: 1px solid black;
+    padding:20px;
+    text-align: center;
+}
+.content{
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+}
+.content nav{
+    border-right: 1px solid gray;
+    font-size: 2rem;
+}
+.content aside{
+    border-left: 1px solid gray;
+    padding :20px;
+    font-size: 2rem;
+    text-align: center;
+    
+}
+main{
+    font-size:1rem;
+    padding: 10px;
 }

@@ -4,16 +4,8 @@
         <title>FiFAIink</title>
         <meta charset="utf-8">
         <style>
-            .fifa{
-                color: cadetblue;
-                text-decoration: underline;
-                font-size: 40px;
-                font-family: 'Times New Roman', Times, serif;
-            }
-            a:visited{
-                color :skyblue;
-            }
-            a:link{
+             @import url("style.css");
+            a{
                 color:black;
             }
             a:hover{
@@ -23,32 +15,39 @@
                 color:yellow;
             }
             input:focus{
-                background-color: black;
+                background-color: skyblue;
                 color:rgb(87, 55, 55);
             }
-
+            
 
         </style>
     </head>
     <body>
-        <input type="text">
-        <h1><a href="index.html">WEB</h1></a>
-        <ol>
-            <li><a href="1.html">LEGEND</li></a>
-            <li><a href="2.html">FLASHBACK</li></a>
-            <li><a href="3.html">GOLD</li></a>
-        </ol>
-        <h1>LIST</h1>
-        <ol>
-            <a href="https://www.futbin.com/22/player/373/neymar-jr"><li>neymar</li></a>
-            <a href="https://www.futbin.com/22/player/323/kylian-mbapp%C3%A9"><li>mbappe</li></a>
-            <a href="https://www.futbin.com/22/player/371/lionel-messi"><li>messi</li></a>
-        </ol>
-        <h1> 피파게임리스트</h1>
-        <iframe width="780" height="400" src="https://www.youtube.com/embed/vLj-27T-SEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
-        <a href="https://www.futbin.com/22"><strong class="fifa">FIFA 22</a>: is the best game ever</strong>
-        <p class="fifa"><strong>FIFA 21</strong>: last game</p>
-        <li class="fifa">king</li>
-        <img src="Tree.jpg" width="50%"> 
+        <div class="container">
+            <header>
+            <h1><a href="index.html">FIFA 22 INFORMATION</a></h1>
+            <input type="text"> 검색  
+            </header>    
+        <section class="content">
+            <nav>
+                <ol>
+                    <li><a href="1.html">FiFA explain</li></a>
+                    <li><a href="2.html">FiFA card</li></a>
+                    <li><a href="3.html">FIFA SBC</li></a>
+                </ol>
+            </nav>
+            <main>
+                <iframe width="1000" height="600" src="https://www.youtube.com/embed/vLj-27T-SEQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+            </main>
+            <aside>
+                <img src='AD.jpg' width="100%">
+                <a href="https://www.ea.com/ko-kr/games/fifa/fifa-22">Please Buy</a>
+            </aside>
+            <footer>
+            <a href="https://cafe.naver.com/realfifaarena">More INFORMATION</a>
+                </footer>
+        </section>
+        </div>
+
     </body>
 </html>
