@@ -1,31 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Mometum App</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>MinSeungJun</title>
 </head>
 <body>
-  <form class="hidden" id="login-form">
-    <input required maxlength="15" type="text" placeholder="What is your name?"/>
-    <button>Log In</button>
+  <form class='hidden' id="login-form">
+    <input required maxlength=15 type="text" placeholder="write your name">
+    <button>Log in</button>
   </form>
-  <h1 id="greeting" class="hidden"></h1>
+  <h1 class='hidden' id='greeting'></h1>
+  <h2 id="clock"></h2>
   <form id="todo-form">
-      <input type="text" placeholder="Write please" required/>
+    <input type="text" placeholder="Write your wallet and enter" required/>
   </form>
   <ul id="todo-list"></ul>
-  <h2 id="clock"></h2>
-  <div id="quote">
-    <span></span>
-    <span></span>
+  <div id="weather">
+    <span id="name"></span>
+    <span id="wea"></span>
+    <span id="temp"></span>
   </div>
-    <script src='quotes.js'></script>
-    <script src='greeting.js'></script>
-    <script src='clock.js'></script>
-    <script src='background.js'></script>
-    <script src='todo.js'></script>
+  <footer>  
+    <h3 id="quotes">
+      <span id="quote"></span><br>
+      <span id="author"></span>
+</h3></footer>
+  <script src="greeting.js"></script>
+  <script src="clock.js"></script>
+  <script src="quotes.js"></script>
+  <script src="background.js"></script>
+  <script src="todo.js"></script>
+  <script src="weather.js"></script>
 </body>
 </html>

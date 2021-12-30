@@ -1,11 +1,11 @@
-const clock=document.querySelector("h2#clock");
+const clock=document.querySelector("#clock");
 
-function sayhello(){
+function time(){
     const times=new Date();
     const hours=String(times.getHours()).padStart(2,"0");
-    const minutes=String(times.getMinutes()).padStart(2,"0");
+    const miutes=String(times.getMinutes()).padStart(2,"0");
     const second=String(times.getSeconds()).padStart(2,"0");
-    clock.innerText=`${hours} : ${minutes}: ${second}`
+    clock.innerText=`${hours}:${miutes}:${second}`;
 }
-sayhello();
-setInterval(sayhello,1000);
+time();
+setInterval(time,1000);

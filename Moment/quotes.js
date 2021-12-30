@@ -40,8 +40,8 @@ const quotes=[
     author:"헬렌켈러",
 },
 ]
-const quote=document.querySelector("#quote span:first-child");
-const author=document.querySelector("#quote span:last-child");
-const todaysQuotes=quotes[Math.floor(Math.random() * quotes.length)];
- quote.innerText=todaysQuotes.quote;
- author.innerText=todaysQuotes.author;
+const quote=document.querySelector("#quotes span:first-child");
+const author=document.querySelector("#quotes span:last-child");
+const random=quotes[Math.floor(Math.random()*quotes.length)];
+quote.innerText=random.quote;
+author.innerText=random.author;

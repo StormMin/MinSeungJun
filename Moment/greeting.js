@@ -1,25 +1,24 @@
-
 const loginForm=document.querySelector("#login-form");
-const loginInput=document.querySelector("#login-form input");
+const loginInput=loginForm.querySelector("input");
 const greeting=document.querySelector("#greeting");
-const ID="user";
-const HID="hidden"
-function handleclick(event){
+
+function paints(name){
+    greeting.innerText=`Hello ${name}`;
+    greeting.classList.remove("hidden");
+}
+
+function handlebutton(event){
     event.preventDefault();
-    loginForm.classList.add(HID);
-   const user=loginInput.value;
-   localStorage.setItem(ID,user);
-    paintGreetings(user);
+    loginForm.classList.add("hidden");
+    localStorage.setItem("user",loginInput.value);
+    paints(loginInput.value);
 }
-function paintGreetings(username){
-    greeting.innerText=`Hello ${username}`;
-    greeting.classList.remove(HID);
-}
-const saved=localStorage.getItem(ID);
-if (saved===null){
-    loginForm.classList.remove(HID);
-    loginForm.addEventListener("submit",handleclick);
+
+const savedloginForm=localStorage.getItem("user");
+if (savedloginForm==null){
+    loginForm.classList.remove("hidden");
+    loginForm.addEventListener("submit",handlebutton);
 }
 else {
-    paintGreetings(saved);
+    paints(savedloginForm);
 }

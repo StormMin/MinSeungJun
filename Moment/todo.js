@@ -11,9 +11,9 @@ function deleteTodo(event){
     const d=event.target;
     const li=event.target.parentElement;
    const DeltoDos=toDos.filter(function(element,index){
-       console.log(index);
-       console.log(li.id);
-        return index!==parseInt(li.id);
+       console.log(element);
+       console.log(li);
+        return element!==li.id;
     })
     console.log(DeltoDos);
     toDos=DeltoDos;
@@ -25,7 +25,7 @@ function paintTODO(newTodo){
     const li= document.createElement("li");
     const span=document.createElement("span");
     const button=document.createElement("button");
-    li.id=toDos.length;
+    li.id=newTodo;
     button.innerText="X";
     button.addEventListener("click",deleteTodo);
     li.appendChild(span);
