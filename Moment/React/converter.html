@@ -13,7 +13,7 @@
   <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   <script type="text/babel">
-    function APP() {
+    function MinutesToHours() {
       const [hours, sethours] = React.useState();
       const [minutes, setMinutes] = React.useState();
       const onChange = (event) => {
@@ -24,9 +24,12 @@
         sethours(event.target.value);
         setMinutes(event.target.value * 60);
       };
+      const reset = () => {
+        setMinutes(0);
+        sethours(0);
+      };
       return (
         <div>
-          <h1>Super Converter</h1>
           <label htmlfor="minutes">Minutes</label>
           <input
             value={minutes}
@@ -43,6 +46,62 @@
             type="number"
             onChange={onChangeH}
           />
+          <button onClick={reset}>Reset</button>
+        </div>
+      );
+    }
+    function KmToMiles() {
+      const [kms, setkm] = React.useState();
+      const [ms, setMeter] = React.useState();
+      const onChange = (event) => {
+        setMeter(event.target.value);
+        setkm(event.target.value / 1000);
+      };
+      const onChangeH = (event) => {
+        setkm(event.target.value);
+        setMeter(event.target.value * 1000);
+      };
+      const reset = () => {
+        setMeter(0);
+        setkm(0);
+      };
+      return (
+        <div>
+          <label htmlfor="ms">ms</label>
+          <input
+            value={ms}
+            id="ms"
+            placeholder="ms"
+            type="number"
+            onChange={onChange}
+          />
+          <label htmlfor="kms">kms</label>
+          <input
+            value={kms}
+            id="kms"
+            placeholder="kms"
+            type="number"
+            onChange={onChangeH}
+          />
+          <button onClick={reset}>Reset</button>
+        </div>
+      );
+    }
+    function APP() {
+      const [index, setIndex] = React.useState("xx");
+      const onSelect = (event) => {
+        setIndex(event.target.value);
+      };
+      return (
+        <div>
+          <h1>Super Converter</h1>
+          <select value={index} onChange={onSelect}>
+            <option value="xx">Select</option>
+            <option value="0">Minutes</option>
+            <option value="1">Km</option>
+          </select>
+          {index === "0" ? <MinutesToHours /> : null}
+          {index === "1" ? <KmToMiles /> : null}
         </div>
       );
     }
