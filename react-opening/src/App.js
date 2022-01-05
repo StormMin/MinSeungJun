@@ -1,28 +1,26 @@
 import Button from "./Button";
 import styles from "./App.module.css";
 import { useState, useEffect } from "react";
+
+function Hello() {
+  function byFn() {
+    console.log("bye");
+  }
+  function hiFn() {
+    console.log("hi");
+    return byFn;
+  }
+  useEffect(hiFn, []);
+  return <h1>Hello</h1>;
+}
+
 function App() {
-  const [counter, setValue] = useState(0);
-  const [keyword, setkeyword] = useState("");
-  const onChange = (event) => setkeyword(event.target.value);
-  const onClick = () => setValue((prev) => prev + 1);
-  console.log("i run");
-  useEffect(() => {
-    console.log("call the api");
-  }, []);
-  useEffect(() => {
-    console.log("call the api");
-  }, [keyword]);
+  const [showing, setShowing] = useState(false);
+  const onClick = () => setShowing((prev) => !prev);
   return (
-    <div className={styles.title}>
-      <h1>{counter}</h1>
-      <input
-        type="text"
-        placeholder="Wirte down"
-        onChange={onChange}
-        value={keyword}
-      ></input>
-      <Button text={"continue"} onClick={onClick}></Button>
+    <div>
+      {showing ? <Hello /> : null}
+      <button onClick={onClick}>{showing ? "HIDE" : "The Show"}</button>
     </div>
   );
 }
