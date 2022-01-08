@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/SPIDERMAN-webstudy.github.io/MinSeungJun/static/js/main.f9348103.js",
-    "index.html": "/SPIDERMAN-webstudy.github.io/MinSeungJun/index.html",
-    "main.f9348103.js.map": "/SPIDERMAN-webstudy.github.io/MinSeungJun/static/js/main.f9348103.js.map"
+    "main.js": "/MinSeungJun/static/js/main.fa94e086.js",
+    "index.html": "/MinSeungJun/index.html",
+    "main.fa94e086.js.map": "/MinSeungJun/static/js/main.fa94e086.js.map"
   },
   "entrypoints": [
-    "static/js/main.f9348103.js"
+    "static/js/main.fa94e086.js"
   ]
 }
