@@ -1,0 +1,133 @@
+.all {
+  color: wheat;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+.container {
+  height: 500px;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  border: 1px solid grey;
+  color: red;
+}
+.footer {
+  border-top: 1px solid gray;
+  text-align: center;
+}
+.nav {
+  border-right: 1px solid gray;
+  padding: 20px;
+}
+.aside {
+  border-left: 1px solid gray;
+  padding: 20px;
+}
+.content {
+  align-items: center;
+}
+.rainbow {
+  border-bottom: 1px solid gray;
+  padding-left: 20px;
+  font-size: 5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  /* Chrome, Safari, Opera */
+  -webkit-animation: rainbow 3s infinite;
+
+  /* Internet Explorer */
+  -ms-animation: rainbow 3s infinite;
+
+  /* Standar Syntax */
+  animation: rainbow 3s infinite;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes rainbow {
+  0% {
+    color: orange;
+  }
+  10% {
+    color: purple;
+  }
+  20% {
+    color: red;
+  }
+  30% {
+    color: CadetBlue;
+  }
+  40% {
+    color: yellow;
+  }
+  50% {
+    color: coral;
+  }
+  60% {
+    color: green;
+  }
+  70% {
+    color: cyan;
+  }
+  80% {
+    color: DeepPink;
+  }
+  90% {
+    color: DodgerBlue;
+  }
+  100% {
+    color: orange;
+  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes rainbow {
+  0% {
+    color: orange;
+  }
+  10% {
+    color: purple;
+  }
+  20% {
+    color: red;
+  }
+  40% {
+    color: yellow;
+  }
+  60% {
+    color: green;
+  }
+  100% {
+    color: orange;
+  }
+}
+
+/* Standar Syntax */
+@keyframes rainbow {
+  0% {
+    color: orange;
+  }
+  10% {
+    color: purple;
+  }
+  20% {
+    color: red;
+  }
+  40% {
+    color: yellow;
+  }
+  60% {
+    color: green;
+  }
+  100% {
+    color: orange;
+  }
+}
+.chos {
+  font-size: 20px;
+  text-align: center;
+}
+:link {
+  color: #28d44d;
+}
+.zip {
+  text-align: right;
+}
