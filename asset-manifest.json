@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/MinSeungJun/static/css/main.46010ae3.css",
-    "main.js": "/MinSeungJun/static/js/main.26f4f279.js",
+    "main.css": "/MinSeungJun/static/css/main.9595698b.css",
+    "main.js": "/MinSeungJun/static/js/main.04ff9e23.js",
     "static/media/dongdong.jpg": "/MinSeungJun/static/media/dongdong.42466686453b7b06c66f.jpg",
     "static/media/ad.png": "/MinSeungJun/static/media/ad.e88fb3dc689f9074ce49.png",
     "static/media/idot.png": "/MinSeungJun/static/media/idot.85b2211facb2b00a5fa1.png",
     "index.html": "/MinSeungJun/index.html",
-    "main.46010ae3.css.map": "/MinSeungJun/static/css/main.46010ae3.css.map",
-    "main.26f4f279.js.map": "/MinSeungJun/static/js/main.26f4f279.js.map"
+    "main.9595698b.css.map": "/MinSeungJun/static/css/main.9595698b.css.map",
+    "main.04ff9e23.js.map": "/MinSeungJun/static/js/main.04ff9e23.js.map"
   },
   "entrypoints": [
-    "static/css/main.46010ae3.css",
-    "static/js/main.26f4f279.js"
+    "static/css/main.9595698b.css",
+    "static/js/main.04ff9e23.js"
   ]
 }
