@@ -10,7 +10,10 @@
   text-align: center;
   font-size: 5rem;
 }
-
+.scroll {
+  display: flex;
+  flex-direction: column;
+}
 /* Chrome, Safari, Opera */
 @-webkit-keyframes rainbow {
   0% {
@@ -95,4 +98,35 @@
   color: tomato;
   text-align: center;
   font-size: 2rem;
+}
+@media (max-width: 1230px) {
+  html {
+    font-size: 80%;
+  }
+}
+@media (max-width: 980px) {
+  .rainbow {
+    font-size: 3rem;
+  }
+  .sub {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 730px) {
+  .rainbow {
+    font-size: 2.5rem;
+  }
+  .sub {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 613px) {
+  .rainbow {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 500px) {
+  .rainbow {
+    font-size: 1.5rem;
+  }
 }

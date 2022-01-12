@@ -24,16 +24,23 @@ function Detail() {
       <h1 className={styles.rainbow}>{movies.title}</h1>
       <div className={styles.container}>
         <span className={styles.nav}>
-          <img src={movies.medium_cover_image} width="100%" />
+          <img className={styles.img} src={movies.medium_cover_image} />
         </span>
         <span className={styles.content}>
           {movies.yt_trailer_code === "" ? (
-            <div>
-              <h2>NO Trailer</h2>
-              <img src={Image} width="40%" />
-            </div>
+            <iframe
+              className={styles.you}
+              width="100%"
+              height="100%"
+              src={`https://www.youtube.com/embed/tJvJZ0tGWdE`}
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           ) : (
             <iframe
+              className={styles.you}
               width="100%"
               height="100%"
               src={`https://www.youtube.com/embed/${movies.yt_trailer_code}`}
@@ -51,14 +58,14 @@ function Detail() {
             <br /> Rating: {movies.rating}
           </h3>
           {movies.hasOwnProperty("genres") ? (
-            <ul>
-              <h3>genres</h3>
+            <ul className={styles.genres}>
+              <h3>Genres</h3>
               {movies.genres.map((g) => (
                 <li key={g}>{g}</li>
               ))}
             </ul>
           ) : null}
-          <ol className="styles.chos">
+          <ol className={styles.chos}>
             <h3>Another Movie</h3>
             <Random />
             <Random />
