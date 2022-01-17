@@ -1,5 +1,6 @@
 import "./ExpenseItem.css";
-function ExpenseItem() {
+function ExpenseItem(prop) {
+  const month = prop.date.toLocaleString("en-US", { month: "long" });
   const expenseDate = new Date(2021, 2, 25);
   const expenseTite = "Car Insurance";
   const expenseAmount = 200;
