@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Next from "./components/Next";
 import ErrorModal from "./components/ErrorModal";
+import Wrapper from "./components/Helper/Wrapper";
 function App() {
+  const nameInputRef = useRef();
+  const ageInputRef = useRef();
   const [level, setlevel] = useState(false);
-  const [user, setuser] = useState("");
-  const [age, setage] = useState("");
   const [result, setresult] = useState("");
   const [error, setError] = useState();
   const savepoint = (data) => {
@@ -15,32 +16,28 @@ function App() {
   };
   const handlesubmit = (event) => {
     event.preventDefault();
-    if (user.trim().length === 0 || age.trim().length === 0) {
+    const enteredName = nameInputRef.current.value;
+    const enteredage = ageInputRef.current.value;
+    if (enteredName.length === 0 || enteredage.length === 0) {
       setError({ title: "Invalid input", message: "빈칸머야" });
-    } else if (age < 1) {
+    } else if (enteredage < 1) {
       setError({ title: "Invalid age", message: "나이가 음수?" });
     } else {
       const data = {
-        name: user,
-        years: age,
+        name: enteredName,
+        years: enteredage,
         id: Math.random().toString(),
       };
       savepoint(data);
     }
-    setuser("");
-    setage("");
-  };
-  const handleuser = (event) => {
-    setuser(event.target.value);
-  };
-  const handleage = (event) => {
-    setage(event.target.value);
+    nameInputRef.current.value = "";
+    ageInputRef.current.value = "";
   };
   const errorHandler = () => {
     setError(null);
   };
   return (
-    <div>
+    <React.Fragment>
       {error && (
         <ErrorModal
           title={error.title}
@@ -52,11 +49,11 @@ function App() {
         <form onSubmit={handlesubmit}>
           <div>
             <h3>Username</h3>
-            <input type="text" value={user} onChange={handleuser} />
+            <input type="text" ref={nameInputRef} />
           </div>
           <div>
             <h3>Age(Years)</h3>
-            <input type="number" value={age} onChange={handleage} /> <br />
+            <input type="number" ref={ageInputRef} /> <br />
           </div>
           <button type="submit">Add User</button>
         </form>
@@ -73,7 +70,7 @@ function App() {
         ))} */}
         </div>
       </div>
-    </div>
+    </React.Fragment>
   );
 }
 
