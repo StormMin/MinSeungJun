@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>CSS</title>
+    <style>
+      body {
+        box-sizing: border-box;
+        font-family: Consolas, monospace;
+      }
+      .jb-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+      }
+      .jb-item {
+        padding: 20px;
+        border: 1px solid #444444;
+      }
+      .jb-itema {
+        order: 2;
+      }
+      .jb-itemb {
+        order: 4;
+      }
+      .jb-itemc {
+        order: 3;
+      }
+      .jb-itemd {
+        order: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="jb-container">
+      <div class="jb-itema">Item 1</div>
+      <div class="jb-itemb">Item 2</div>
+      <div class="jb-itemc">Item 3</div>
+      <div class="jb-itemd">Item 4</div>
+    </div>
+  </body>
+</html>
