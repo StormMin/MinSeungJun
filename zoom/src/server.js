@@ -14,15 +14,14 @@ const listenHandler = () => console.log(`Lisening on http://localhost:3000/`);
 
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
-
+const sockets = [];
 wss.on("connection", (socket) => {
-  console.log(socket);
+  sockets.push(socket);
   socket.on("message", (message) => {
-    console.log(message.toString("utf8"));
+    sockets.forEach((aSocket) => aSocket.send(message.toString("utf8")));
   });
   socket.on("close", () => {
     console.log("Disconnected from Browser 📕");
   });
-  socket.send("King is Back");
 });
 server.listen(3000, listenHandler);
