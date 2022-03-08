@@ -16,9 +16,18 @@ const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 const sockets = [];
 wss.on("connection", (socket) => {
+  socket["nickname"] = "Anon";
   sockets.push(socket);
   socket.on("message", (message) => {
-    sockets.forEach((aSocket) => aSocket.send(message.toString("utf8")));
+    const parsed = JSON.parse(message);
+    switch (parsed.type) {
+      case "new_message":
+        sockets.forEach((aSocket) =>
+          aSocket.send(`${socket.nickname}: ${parsed.payload}`)
+        );
+      case "nick":
+        socket["nickname"] = parsed.payload;
+    }
   });
   socket.on("close", () => {
     console.log("Disconnected from Browser 📕");
