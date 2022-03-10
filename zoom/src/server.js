@@ -16,12 +16,46 @@ const listenHandler = () => console.log(`Lisening on http://localhost:3000/`);
 const httpServer = http.createServer(app);
 const wsServer = socketIO(httpServer);
 
+function publicRooms() {
+  const {
+    sockets: {
+      adapter: { sids, rooms },
+    },
+  } = wsServer;
+  const publicRooms = [];
+  rooms.forEach((_, key) => {
+    if (sids.get(key) === undefined) {
+      publicRooms.push(key);
+    }
+  });
+  return publicRooms;
+}
+
 wsServer.on("connection", (socket) => {
-  socket.on("room", (msg, backend) => {
-    console.log(msg);
-    setTimeout(() => {
-      backend("backend says");
-    }, 1000);
+  socket["nickname"] = "Anon";
+  socket.onAny((event) => {
+    console.log(event);
+  });
+  socket.on("enter_Room", (msg, backend) => {
+    socket.join(msg);
+    backend();
+    socket.to(msg).emit("welcome", socket["nickname"]);
+    wsServer.sockets.emit("updated_room", publicRooms());
+  });
+  socket.on("disconnecting", () => {
+    socket.rooms.forEach((room) => {
+      socket.to(room).emit("bye", socket["nickname"]);
+    });
+  });
+  socket.on("disconnect", () => {
+    wsServer.sockets.emit("updated_room", publicRooms());
+  });
+  socket.on("new_message", (msg, room, done) => {
+    socket.to(room).emit("new_message", `${socket.nickname} : ${msg}`);
+    done();
+  });
+  socket.on("nick", (nick) => {
+    socket["nickname"] = nick;
   });
 });
 httpServer.listen(3000, listenHandler);
