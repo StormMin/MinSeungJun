@@ -49,11 +49,15 @@ const submitHandler = (event) => {
 
 form.addEventListener("submit", submitHandler);
 
-socket.on("welcome", (user) => {
+socket.on("welcome", (user, newCounter) => {
+  const h3 = room.querySelector("h3");
+  h3.innerText = `Room : ${roomName} Person:${newCounter}`;
   makeMessage(`${user} joined`);
 });
 
-socket.on("bye", (user) => {
+socket.on("bye", (user, newCounter) => {
+  const h3 = room.querySelector("h3");
+  h3.innerText = `Room : ${roomName} Person:${newCounter}`;
   makeMessage(`${user} lefted`);
 });
 
