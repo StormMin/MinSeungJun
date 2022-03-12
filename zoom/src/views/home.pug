@@ -11,10 +11,15 @@ html(lang="en")
         header
             h1 MOOM 
         main 
-            div#myStream
-                video#myFace(autoplay,playsinline,width="400",height="400")
-                button#mute Muted
-                button#camera Turn off Camera
-                select#cameras
+            div#welcome
+                form 
+                    input(type="text",placeholder="enter Room")
+                    button Save
+            div#call
+                div#myStream
+                    video#myFace(autoplay,playsinline,width="400",height="400")
+                    button#mute Muted
+                    button#camera Turn off Camera
+                    select#cameras
         script(src="/socket.io/socket.io.js") 
         script(src="/public/js/app.js")  
