@@ -146,7 +146,10 @@ socket.on("offer", async (offer) => {
   myPeerConnection.addEventListener("datachannel", (event) => {
     myDataChannel = event.channel;
     myDataChannel.addEventListener("message", (event) => {
-      console.log(event.data);
+      const ul = document.querySelector("chat");
+      const li = document.createElement("li");
+      li.innerText = event.value;
+      ul.appendChild(li);
     });
   });
   myPeerConnection.setRemoteDescription(offer);
