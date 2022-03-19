@@ -7,6 +7,7 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import Loading from "./UI/Loading";
 import "./App.css";
 function App() {
   const [customer, setCustomer] = useState([]);
@@ -33,15 +34,19 @@ function App() {
           <TableCell>나이</TableCell>
         </TableHead>
         <TableBody>
-          {customer?.map((prop) => (
-            <Customer
-              key={prop.id}
-              name={prop.name}
-              age={prop.age}
-              id={prop.id}
-              image={prop.image}
-            />
-          ))}
+          {customer ? (
+            customer?.map((prop) => (
+              <Customer
+                key={prop.id}
+                name={prop.name}
+                age={prop.age}
+                id={prop.id}
+                image={prop.image}
+              />
+            ))
+          ) : (
+            <Loading />
+          )}
         </TableBody>
       </Table>
     </Paper>
