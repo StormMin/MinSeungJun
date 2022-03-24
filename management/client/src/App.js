@@ -37,11 +37,11 @@ function App() {
           {customer ? (
             customer?.map((prop) => (
               <Customer
-                key={prop.id}
+                key={prop.Customers_id}
                 name={prop.name}
                 age={prop.age}
-                id={prop.id}
-                image={prop.image}
+                id={prop.Customers_id}
+                image={prop.image_url}
               />
             ))
           ) : (
