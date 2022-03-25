@@ -1,16 +1,24 @@
 import React from "react";
 import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
+import CustomerDelete from "./CustomerDelete";
 function Customer(props) {
   return (
     <TableRow>
       <TableCell>{props.id}</TableCell>
       <TableCell>
-        <img src={props.image} alt="profile" />
+        <img
+          src={props.image}
+          alt="profile"
+          style={{ width: 64, height: 64 }}
+        />
       </TableCell>
       <TableCell>{props.name}</TableCell>
       <TableCell>
         <CustomerInfo age={props.age} />
+      </TableCell>
+      <TableCell>
+        <CustomerDelete id={props.id} refresh={props.refresh} />
       </TableCell>
     </TableRow>
   );
