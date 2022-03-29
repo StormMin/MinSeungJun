@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+	<a href="http://www.w3.org" target="_blank">W3C(새 윈도우, _blank)</a>
+    <p>target="self,parent,top"은 그페이지에서 리로드</p>
+    <a id="chap1">1장서론</a>
+    <a href="#chap1">서론으로 가기</a>
+    <p><a href="media/Elvis.png" download>엘비스 이미지 다운로드</a>
+    </p>
+    <iframe src="../week2/week2.html" name="right"width="200" height="150"></iframe>
+    <iframe src="../week2/week2.html" name="left"width="200" height="150" srcdoc="<html><head></head>
+        <body>hello</body></html>"
+></iframe>
+<ul>
+    <li><a href="http://www.w3c.org" target="right">W3C</a>
+    <li><a href="http://www.etnews.com" target="_self">전자신문</a>
+    <li><a href="http://www.mk.co.kr" target="_top">매일경제신문</a>
+    <li><a href="http://www.w3c.org" target="_blank">새 창에 W3C</a>
+    </ul>
+    <iframe src="ex-24-sitelist.html" name="left" width="200" height="300">
+    </iframe>
+    <iframe src="http://www.w3c.org" name="right" width="300" height="300">
+    </iframe>
+    <video src="bear.mp4" width="320" height="240"></video>
+    <iframe width="790" height="444" src="https://www.youtube.com/embed/5ch94AaPZRQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <audio src="mymusic.mp3" controls loop></audio>
+
+</body>
+</html>
