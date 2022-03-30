@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import { post } from "axios";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 
 const CustomerADD = (props) => {
+  const [open, setOpen] = useState(false);
   const [age, setAge] = useState();
   const [name, setName] = useState("");
   const [file, setFile] = useState();
@@ -14,7 +22,20 @@ const CustomerADD = (props) => {
     setFile();
     setName("");
     setAge("");
+    setOpen(false);
+    setFilename("");
     props.refresh();
+  };
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+    setFile();
+    setName("");
+    setAge("");
+    setFilename("");
   };
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
@@ -40,19 +61,56 @@ const CustomerADD = (props) => {
     return post(url, formData, config);
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <h1>고객 추가</h1>
-      프로필 이미지:{" "}
-      <input
-        type="file"
-        file={file}
-        value={filename}
-        onChange={handleFileChange}
-      />
-      <br /> 이름: <input type="text" value={name} onChange={handleName} />
-      <br /> 나이 : <input type="text" value={age} onChange={handleAge} />
-      <button type="submit"> 제출하기</button>
-    </form>
+    <>
+      <Button variant="contained" onClick={handleClickOpen}>
+        고객 추가하기
+      </Button>
+      <Dialog open={open} onClose={handleClose}>
+        <DialogTitle>고객 추가</DialogTitle>
+        <DialogContent>
+          <input
+            hidden
+            id="raised-button"
+            type="file"
+            accept="image/*"
+            file={file}
+            value={filename}
+            onChange={handleFileChange}
+            required
+          />
+          <label htmlFor="raised-button">
+            <Button variant="contained" component="span" name="file">
+              {filename === "" ? "프로필이미지 입력" : filename}
+            </Button>
+          </label>
+          <br />
+          <TextField
+            type="text"
+            value={name}
+            onChange={handleName}
+            label="이름"
+            fullWidth
+            variant="standard"
+            autoFocus
+            required
+          />
+          <TextField
+            type="text"
+            value={age}
+            onChange={handleAge}
+            label="나이"
+            fullWidth
+            variant="standard"
+            autoFocus
+            required
+          />
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>Cancel</Button>
+          <Button onClick={handleSubmit}>Submit</Button>
+        </DialogActions>
+      </Dialog>
+    </>
   );
 };
 

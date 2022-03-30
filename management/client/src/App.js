@@ -9,9 +9,12 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import Loading from "./UI/Loading";
 import CustomerADD from "./components/CustomerADD";
+import AppBars from "./UI/AppBars";
 import "./App.css";
+
 function App() {
   const [customer, setCustomer] = useState([]);
+  const [search, setSearch] = useState("");
   const callApi = async () => {
     const response = await fetch("/api/customers");
     const body = await response.json();
@@ -32,16 +35,23 @@ function App() {
       .catch((err) => console.log(err));
     console.log("hi");
   };
+  const handleValueChange = (e) => {
+    setSearch(e.target.value);
+  };
+  const handleSubmit = (e) => {};
+  const cellList = ["번호", "프로필", "이름", "나이", "설정"];
   return (
     <>
+      <AppBars />
+      <div className="add">
+        <CustomerADD refresh={refresh} />
+      </div>
       <Paper className="root">
         <Table className="table">
           <TableHead>
-            <TableCell>번호</TableCell>
-            <TableCell>프로필</TableCell>
-            <TableCell>이름</TableCell>
-            <TableCell>나이</TableCell>
-            <TableCell>설정</TableCell>
+            {cellList.map((c) => {
+              return <TableCell>{c}</TableCell>;
+            })}
           </TableHead>
           <TableBody>
             {console.log("hi")}
@@ -62,7 +72,6 @@ function App() {
           </TableBody>
         </Table>
       </Paper>
-      <CustomerADD refresh={refresh} />
     </>
   );
 }

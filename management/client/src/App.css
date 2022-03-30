@@ -6,3 +6,8 @@
 .table {
   min-width: 1080px;
 }
+.add {
+  margin: 15px;
+
+  text-align: center;
+}
