@@ -1,3 +1,35 @@
-h3,li {color: beige;}
-.warning {color: red;}
+h3,li {color: aquamarine;}
+.warning { color: beige;}
 body.main{background: aliceblue;}
+#list{ background: mistyrose;}
+li>strong{color: red;}
+* {color:green;}
+h3:first-letter{color: red;}
+li:hover{background-color: royalblue;
+position: fixed;
+list-style: inside;}
+h3 {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    text-indent: 1rem;
+    text-shadow: 3px 3px black;
+    position: absolute;
+}
+div{
+    border: 1px;
+    border-width: 3px;
+    border-style: dotted;
+    border-radius: 50px;
+}
+div:hover{
+    position: relative;
+    left:20px;
+}
+.asd{
+    border-image: auto 30 round;
+}
+.warning{
+    overflow: scroll;
+}
