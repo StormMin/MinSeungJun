@@ -23,7 +23,7 @@ app.use("/image", express.static("./uploads"));
 app.post("/api/customers", upload.single("image"), (req, res) => {
   let sql =
     "INSERT INTO customers (image_url,name,age,createTime) VALUES (?,?,?,now())";
-  let image = `http://localhost:${port}/image/` + req.file.filename;
+  let image = `http://localhost:/${port}/image/` + req.file.filename;
   let name = req.body.name;
   let age = req.body.age;
   let params = [image, name, age];
